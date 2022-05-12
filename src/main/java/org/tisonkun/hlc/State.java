@@ -31,7 +31,7 @@ public final class State {
     private final Supplier<Instant> now;
     private volatile HLTimestamp timestamp;
 
-    public State(HLTimestamp timestamp, Supplier<Instant> now) {
+    private State(HLTimestamp timestamp, Supplier<Instant> now) {
         this.timestamp = timestamp;
         this.now = now;
     }
