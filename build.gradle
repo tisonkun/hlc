@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'nebula.dependency-recommender' version '9.0.2'
+    id 'com.diffplug.spotless' version '6.3.0'
+    id 'com.adarshr.test-logger' version '3.2.0'
+}
+
+dependencyRecommendations {
+    propertiesFile file: file('versions.props')
+}
+
+group 'org.tisonkun.hlc'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+spotless {
+    format 'misc', {
+        // define the files to apply `misc` to
+        target '*.gradle', '*.md', '.gitignore'
+
+        // define the steps to apply to those files
+        trimTrailingWhitespace()
+        indentWithSpaces(4)
+        endWithNewline()
+    }
+
+    java {
+        importOrder('', 'static ')
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        indentWithSpaces(4)
+        endWithNewline()
+    }
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.slf4j:slf4j-api'
+
+    testImplementation 'org.junit.vintage:junit-vintage-engine'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.slf4j:slf4j-simple'
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'org.assertj:assertj-core'
+}
+
+test {
+    useJUnitPlatform()
+}
