@@ -30,12 +30,12 @@ public record HLTimestamp(Instant wall, long logical) implements Comparable<HLTi
     /**
      * Creates a new hybrid logical timestamp with the given seconds, nanoseconds, and logical ticks.
      * @param seconds second part
-     * @param nanoAdjustment nanosecond part
+     * @param nanos nanosecond part
      * @param logical ticks
      * @return hybrid logical timestamp
      */
-    public static HLTimestamp create(long seconds, long nanoAdjustment, long logical) {
-        return new HLTimestamp(Instant.ofEpochSecond(seconds, nanoAdjustment), logical);
+    public static HLTimestamp create(long seconds, long nanos, long logical) {
+        return new HLTimestamp(Instant.ofEpochSecond(seconds, nanos), logical);
     }
 
     @Override
