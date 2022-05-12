@@ -27,6 +27,7 @@ spotless {
         target '*.gradle', '*.md', '.gitignore'
 
         // define the steps to apply to those files
+        replaceRegex('TrimMultipleEmptyLines', '^\n\n', '\n')
         trimTrailingWhitespace()
         indentWithSpaces(4)
         endWithNewline()
@@ -101,7 +102,6 @@ publishing {
             }
         }
     }
-
 
     repositories {
         maven {
