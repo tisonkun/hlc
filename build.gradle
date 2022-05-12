@@ -46,13 +46,9 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
 
-    implementation 'org.slf4j:slf4j-api'
-
     testImplementation 'org.junit.vintage:junit-vintage-engine'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    testImplementation 'org.slf4j:slf4j-simple'
-    testImplementation 'org.mockito:mockito-core'
     testImplementation 'org.assertj:assertj-core'
 }
 
