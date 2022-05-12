@@ -99,6 +99,18 @@ publishing {
                         url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                     }
                 }
+                developers {
+                    developer {
+                        id = 'tison'
+                        name = 'Zili Chen'
+                        email = 'wander4096@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/tisonkun/hlc.git'
+                    developerConnection = 'scm:git:ssh://github.com:tisonkun/hlc.git'
+                    url = 'https://github.com/tisonkun/hlc'
+                }
             }
         }
     }
