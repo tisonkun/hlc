@@ -90,7 +90,7 @@ publishing {
             groupId = 'org.tisonkun.hlc'
             artifactId = 'hlc'
             pom {
-                name = 'HLC'
+                name = 'Hybrid Logical Clock'
                 description = 'A Hybrid Logical Clock implementation in Java.'
                 url = 'https://github.com/tisonkun/hlc'
                 licenses {

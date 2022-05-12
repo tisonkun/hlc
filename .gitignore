@@ -12,6 +12,9 @@ site
 *.iml
 out
 
+# vscode files
+bin/
+
 # gradle build
 .gradle
 .out/
